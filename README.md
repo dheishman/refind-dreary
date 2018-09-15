@@ -5,12 +5,12 @@ A gloomy rEFInd theme (as seem in [this Reddit thread](https://www.reddit.com/r/
 
 This is a fork with an added readme for a description, as well as instructions for how to install the theme.
 
-## Author's description
+### Author's description
     This theme is based on /u/Evan-Purkhiser 's rEFInd-minimal, and /u/dyslexiccoder 's refind-ambience. 
     I just wanted to extend credit where credit is due, and thank you both for making those awesome themes. 
     This one is not much more than a mashup of my favorite parts of each.
 
-## Installation instructions
+### Installation instructions
 <b>1.</b> Locate your rEFInd EFI directory. This is commonly <code>/boot/EFI/refind</code>, though it will depend on where you mount your ESP and where rEFInd is installed. <code>fdisk -l</code> and <code>mount</code> may help you find it.
 
 <b>2.</b> Create a folder called "themes" inside it, if it doesn't already exist.
