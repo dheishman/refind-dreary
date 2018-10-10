@@ -19,23 +19,23 @@ This is a fork with an added readme for a description, as well as instructions f
 
 <b>4.</b> To enable the theme, add <code>include themes/refind-dreary/{xxx}res/theme.conf</code> at the end of <code>refind.conf</code>.
 
-Here's an example menuentry configuration (with highres theme on):
+Here's an example menuentry configuration (using the `highres` icons):
 
     menuentry "Arch Linux" {
-	icon /EFI/refind/themes/rEFInd-minimal/icons/os_arch.png
-	loader vmlinuz-linux
-	initrd initramfs-linux.img
-	options "rw root=UUID=dfb2919d-ff78-48db-a8a7-23f7542c343a loglevel=3"
+        icon /EFI/refind/themes/rEFInd-dreary/highres/icons/os_arch.png
+        loader vmlinuz-linux
+        initrd initramfs-linux.img
+        options "rw root=UUID=dfb2919d-ff78-48db-a8a7-23f7542c343a loglevel=3"
     }
 
     menuentry "Windows" {
-	icon /EFI/refind/themes/rEFInd-minimal/icons/os_win.png
-	loader /EFI/Microsoft/Boot/bootmgfw.efi
+        icon /EFI/refind/themes/rEFInd-dreary/highres/icons/os_win.png
+        loader /EFI/Microsoft/Boot/bootmgfw.efi
     }
 
     menuentry "OSX" {
-	icon /EFI/refind/themes/rEFInd-minimal/icons/os_mac.png
-	loader /EFI/Apple/Boot/bootmgfw.efi
+        icon /EFI/refind/themes/rEFInd-dreary/highres/icons/os_mac.png
+        loader /EFI/Apple/Boot/bootmgfw.efi
     }
     
     include themes/refind-dreary/highres/theme.conf
