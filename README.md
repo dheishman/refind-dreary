@@ -1,12 +1,12 @@
 # refind-dreary
 ![screenshot](https://i.redditmedia.com/-LCobqYiQ4kLaLS3pmqPjcdnLa2MruQoINa3KDbKVzo.jpg?s=f4cd6834507dd0dfd046684745ab7954)
 
-A gloomy rEFInd theme (as seem in [this Reddit thread](https://www.reddit.com/r/unixporn/comments/62mvp9/i_present_to_you_refinddreary_a_gloomy_refind/)) based on rEFInd-minimal and rEFInd-ambience, taking the best of both themes.
+A gloomy rEFInd theme (as seen in [this Reddit thread](https://www.reddit.com/r/unixporn/comments/62mvp9/i_present_to_you_refinddreary_a_gloomy_refind/)) based on rEFInd-minimal and rEFInd-ambience, taking the best of both themes.
 
 This is a fork with an added readme for a description, as well as instructions for how to install the theme.
 
 ### Author's description
-    This theme is based on /u/Evan-Purkhiser 's rEFInd-minimal, and /u/dyslexiccoder 's refind-ambience. 
+    This theme is based on /u/Evan-Purkhiser's rEFInd-minimal, and /u/dyslexiccoder's refind-ambience. 
     I just wanted to extend credit where credit is due, and thank you both for making those awesome themes. 
     This one is not much more than a mashup of my favorite parts of each.
 
