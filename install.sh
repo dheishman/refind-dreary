@@ -2,28 +2,41 @@
 
 # Installation script for the refind-dreary theme
 
-destFolder="../themes/refind-dreary"
+RES="$1"
+REFIND_DIR="$2"
+DEST_DIR="${REFIND_DIR}/themes/refind-dreary"
 
 
-if ! { [ "$1" = "clover" -o "$1" = "lowres" -o "$1" = "highres" ]; }; then
+if ! { [ "$RES" = "clover" -o "$RES" = "lowres" -o "$RES" = "highres" ]; }; then
     echo "Choose a proper theme version"
     exit 1
 fi
+if [ ! -d "$2" ]; then
+    echo "Give a proper path for the rEFInd directory"
+    exit 2
+fi
 
-if [ -d "$destFolder" ]; then
-    echo "refind-dreary is already installed, would you like to reinstall it[Y/n]?"
-    read answer
+
+if [ -d "$DEST_DIR" ]; then
+    read -p "refind-dreary is already installed, would you like to reinstall it[Y/n]?" answer
     if [ "$answer" = "Y" -o "$answer" = "y" ]; then
-        rm -r "$destFolder"
+        rm -r "$DEST_DIR"
     else
         echo "Installation cancelled"
-        exit
+        exit 0
     fi
 fi
-mkdir -p $destFolder
-cp -r $1/* $destFolder
-sed -i -r "s/^[[:space:]]?include[[:space:]]themes\//# include themes\//g" ../refind.conf
-cat >> ../refind.conf << EOF
+
+mkdir -p $DEST_DIR
+cp -r $RES/* $DEST_DIR
+
+if [ -f "${REFIND_DIR}/refind.conf" ]; then
+    sed -i -r "s/^([[:space:]]*)(include[[:space:]]themes\/)/\1# \2/g" "${REFIND_DIR}/refind.conf"
+else
+    touch "${REFIND_DIR}/refind.conf"
+fi
+
+cat >> "${REFIND_DIR}/refind.conf" << EOF
 
 # Apply the refind-dreary theme
 include themes/refind-dreary/theme.conf
