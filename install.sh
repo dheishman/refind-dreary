@@ -3,6 +3,7 @@
 # Installation script for the refind-dreary theme
 
 RES="$1"
+INSTALLER_DIR="$(dirname $(readlink -f $0))"
 REFIND_DIR="$2"
 DEST_DIR="${REFIND_DIR}/themes/refind-dreary"
 
@@ -28,18 +29,20 @@ if [ -d "$DEST_DIR" ]; then
 fi
 
 mkdir -p $DEST_DIR
-cp -r $RES/* $DEST_DIR
+cp -r $INSTALLER_DIR/$RES/* $DEST_DIR
 
 if [ -f "${REFIND_DIR}/refind.conf" ]; then
-    sed -i -r "s/^([[:space:]]*)(include[[:space:]]themes\/)/\1# \2/g" "${REFIND_DIR}/refind.conf"
+    sed -i -r "/^[[:space:]]*include[[:space:]]themes\/refind-dreary\/theme\.conf/!s/^([[:space:]]*)(include[[:space:]]themes\/)/\1# \2/g" "${REFIND_DIR}/refind.conf"
 else
     touch "${REFIND_DIR}/refind.conf"
 fi
 
+if ! grep -q -e "^[[:space:]]*include[[:space:]]themes/refind-dreary/theme.conf" "$REFIND_DIR/refind.conf"; then
 cat >> "${REFIND_DIR}/refind.conf" << EOF
 
 # Apply the refind-dreary theme
 include themes/refind-dreary/theme.conf
 EOF
+fi
 
 echo "Succesfully installed refind-dreary"
