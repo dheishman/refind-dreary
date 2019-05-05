@@ -15,7 +15,12 @@ This is a fork with an added readme for a description, as well as instructions f
 
 <b>2.</b> Copy this repository on your system and execute the installation script(it takes the resolution and the rEFInd directory as arguments). For example you can:
 
-<code>git clone https://github.com/dheishman/refind-dreary.git && ./refind-dreary/install.sh -resolution- -rEFInd_directory-</code>.
+<code>
+    git clone https://github.com/dheishman/refind-dreary.git
+    sudo ./refind-dreary/install.sh -resolution- -rEFInd_directory-
+</code>
+
+> Probably you will need to execute the installation script as root.
 
 ### Manual installation instructions
 <b>1.</b> Locate your rEFInd EFI directory. This is commonly <code>/boot/EFI/refind</code>, though it will depend on where you mount your ESP and where rEFInd is installed. <code>fdisk -l</code> and <code>mount</code> may help you find it.
